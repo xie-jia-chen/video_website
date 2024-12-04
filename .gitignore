@@ -1,0 +1,12 @@
+node_modules
+dist
+out
+bin
+build
+.idea
+Everything.db
+Everything.db.tmp
+*.log*
+.DS_Store
+electron.vite.config.*.mjs
+target

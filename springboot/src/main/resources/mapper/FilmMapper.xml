@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.FilmMapper">
+
+    <insert id="insert" parameterType="com.example.entity.Film">
+        insert into film(name,cover,descr,year,director,actors,category_id,country,language,date,duration,imdb)
+        values (#{name},#{cover},#{descr},#{year},#{director},#{actors},#{categoryId},#{country},#{language},#{date},#{duration},#{imdb})
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.Film">
+        update film set name = #{name}, cover = #{cover}, descr = #{descr}, year = #{year}, director = #{director},
+        actors = #{actors}, category_id = #{categoryId}, country = #{country}, language = #{language},
+        date = #{date}, duration = #{duration}, imdb = #{imdb}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from film where id = #{id}
+    </delete>
+
+    <select id="selectAll" resultType="com.example.entity.Film">
+        select film.*, category.name as categoryName from film
+        left join category on film.category_id = category.id
+        <where>
+            <if test="name != null">and film.name like concat('%', #{name},'%')</if>
+            <if test="categoryId != null">and film.category_id = #{categoryId}</if>
+        </where>
+        order by film.id desc
+    </select>
+    <select id="selectById" resultType="com.example.entity.Film">
+        select film.*, category.name as categoryName from film
+        left join category on film.category_id = category.id
+        where film.id = #{id}
+    </select>
+</mapper>
