@@ -35,7 +35,7 @@
   import router from "@/router";
 
   const data = reactive({
-    form: { role: 'USER' },
+    form: { role: 'USER',username:'xiejiachen',password:'123456' },
     rules: {
       username: [
         { required: true, message: '请输入账号', trigger: 'blur' },
