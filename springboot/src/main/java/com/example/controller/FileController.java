@@ -20,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 public class FileController {
 
     // 表示本地磁盘文件的存储路径
-    private static final String filePath = System.getProperty("user.dir") + "/files/";
+    private static final String filePath = "/home/app/app/web/upload/files/";
 
     @Value("${fileBaseUrl}")
     private String fileBaseUrl;
@@ -55,6 +55,7 @@ public class FileController {
         response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, StandardCharsets.UTF_8));
         // 拼接完整的文件存储路径
         String realFilePath = filePath + fileName;
+        System.out.println("文件地址：" + realFilePath);
         try {
             // 通过文件的存储路径拿到文件字节数组
             byte[] bytes = FileUtil.readBytes(realFilePath);
@@ -64,6 +65,7 @@ public class FileController {
             os.flush();
             os.close();
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println("文件下载错误");
         }
     }

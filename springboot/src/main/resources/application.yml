@@ -6,8 +6,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: root
-    url: jdbc:mysql://localhost:3306/v?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+    password: Rqq@0820
+    url: jdbc:mysql://192.168.0.101:3306/v?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
   servlet:
     multipart:
       max-file-size: 100MB
@@ -21,4 +21,4 @@ mybatis:
     map-underscore-to-camel-case: true
 
 # 文件上传的前缀url
-fileBaseUrl: http://localhost:9090
+fileBaseUrl: http://xiejiachen.zhihui56.com/api

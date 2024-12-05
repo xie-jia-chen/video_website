@@ -29,10 +29,10 @@
             <el-icon><Film /></el-icon>
             <span>电影列表</span>
           </el-menu-item>
-          <el-menu-item index="/comment">
+         <!--  <el-menu-item index="/comment">
             <el-icon><Comment /></el-icon>
             <span>电影评论</span>
-          </el-menu-item>
+          </el-menu-item> -->
           <el-sub-menu index="1" v-if="data.user.role === 'ADMIN'">
             <template #title>
               <el-icon><Menu /></el-icon>

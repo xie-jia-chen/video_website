@@ -47,7 +47,7 @@ const data = reactive({
 })
 
 const goDetail = (id) => {
-  location.href = '/filmDetail?id=' + id
+  location.href = '/#/filmDetail?id=' + id
 }
 
 // 查询所有电影分类信息

@@ -48,7 +48,7 @@ const data = reactive({
 })
 
 const goDetail = (id) => {
-  location.href = '/filmDetail?id=' + id
+  location.href = '/#/filmDetail?id=' + id
 }
 
 request.get('/notice/selectAll').then(res => {

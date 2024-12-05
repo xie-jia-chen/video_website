@@ -237,7 +237,7 @@ request.get('/film/selectRecommend/' + data.id).then(res => {
 })
 
 const goDetail = (id) => {
-  location.href = '/filmDetail?id=' + id
+  location.href = '/#/filmDetail?id=' + id
 }
 </script>
 
