@@ -19,9 +19,9 @@
           <el-button color="#333333" size="large" type="primary" style="width: 100%" @click="login">登 录</el-button>
         </el-form-item>
       </el-form>
-      <div style="text-align: right;">
+     <!--  <div style="text-align: right;">
         还没有账号？请 <a href="/register">注册</a>
-      </div>
+      </div> -->
     </div>
 
   </div>
